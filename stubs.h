@@ -1,25 +1,26 @@
 /*****************************************************************
 //
-// NAME: Woojoon Hwang
+// NAME:         Woojoon Hwang
 //
-// HOMEWORK: 3-b
+// HOMEWORK:     project1
 //
-// CLASS: ICS 212
+// CLASS:        ICS 212
 //
-// INSTRUCTOR: Ravi Narayan
+// INSTRUCTOR:   Ravi Narayan
 //
-// DATE: September 22, 2018
+// DATE:         march 10, 2019
 //
-// FILE: prototypes.h
+// FILE:         stubs.h
 //
-// DESCRIPTION: This file contains the prototypes
+// DESCRIPTION:  This file contains function prototypes.
 //
 ****************************************************************/
-
-#include <stdio.h>
 #include "record.h"
 
 int addRecord (struct record **, int, char [ ],char [ ]);
 int printRecord (struct record *, int);
 void printAllRecords(struct record *);
+int findRecords (struct record *, char [ ]);
 int deleteRecord(struct record **, int);
+int readfile(struct record **, char []);
+void writefile(struct record *, char []);
