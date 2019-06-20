@@ -8,4 +8,4 @@ main.o: main.c
 	gcc -ansi -pedantic-errors -Wall -c main.c
 
 clean : 
-	rm *.o project1
+	rm *.o project1 records.txt
