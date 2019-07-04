@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include "stubs.h"
 
-void menuOption(struct record *);
+void menuOption(struct record **);
 void debugSwitch(int, char*[]); 
 void addOption(struct record **);
 void printOption(struct record *);
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
     returnValue = readfile(&start, "records.txt");
     
     debugSwitch(argc, &argv[1]);
-    menuOption(start);
+    menuOption(&start);
     
     writefile(start, "records.txt");
     return returnValue;  
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 //
 **************************************************************/
 
-void menuOption(struct record *start)
+void menuOption(struct record **start)
 {
     int userOption = 0;
     
@@ -108,23 +108,23 @@ void menuOption(struct record *start)
 
         switch(userOption)
         {
-            case 1: addOption(&start);
+            case 1: addOption(start);
 
             break;
 
-            case 2: printOption(start);
+            case 2: printOption(*start);
 
             break;
 
-            case 3: printAllRecords(start);
+            case 3: printAllRecords(*start);
 
             break;
 
-            case 4: findOption(start);
+            case 4: findOption(*start);
 
             break;
 
-            case 5: deleteOption(&start);
+            case 5: deleteOption(start);
 
             break;
 
