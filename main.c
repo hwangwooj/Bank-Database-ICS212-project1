@@ -220,10 +220,12 @@ void addOption(struct record **start)
     printf("\nPlease enter the account number: ");
     scanf("%d", &uaccountno);
     while(getchar() != '\n');
+    fflush(stdin);
 
     printf("Please enter name: ");
     fgets(uname, 25, stdin);
     strtok(uname, "\n");
+    fflush(stdin);
 
     getAddress(uaddress, 80);
 
@@ -428,8 +430,8 @@ void getAddress(char address[], int max)
         }
     }
     
+    fflush(stdin);
     
-        
 }
 
 

@@ -342,7 +342,7 @@ int readfile(struct record ** pstart, char filename[])
     {
         while (fgets(line, 25, inputfile))
         {
-            if (strcmp(line, "!\n") == 0)
+            if (strcmp(line, "\n") == 0)
             {
                 address[strlen(address) - 1] = '\0';
                 addRecord(pstart, accountno, name, address);
@@ -400,7 +400,7 @@ void writefile(struct record * start, char filename[])
     
     while (current != NULL)
     {
-        fprintf(outputfile, "%d\n%s\n%s\n!\n", current->accountno, current->name, current->address);
+        fprintf(outputfile, "%d\n%s\n%s\n\n", current->accountno, current->name, current->address);
         current = current->next;
     }
     
